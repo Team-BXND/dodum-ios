@@ -6,13 +6,16 @@
 //
 
 import SwiftUI
+import Alamofire
 
-struct NetworkRunner: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-#Preview {
-    NetworkRunner()
+class NetworkRunner: ObservableObject {
+    
+    static let shared = NetworkRunner()
+    
+    let session : Session = {
+        let configuration = URLSessionConfiguration.default
+        
+        let session = Session(configuration: configuration)
+        return session
+    }()
 }

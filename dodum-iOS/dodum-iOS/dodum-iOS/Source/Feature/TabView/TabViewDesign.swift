@@ -11,11 +11,8 @@ struct TabViewDesign: View {
     @Binding var SelectedItem : TabViewItem
     var body: some View {
         Rectangle()
-            .frame(width: 344, height: 50)
-            .cornerRadius(10)
+            .frame(width: 393, height: 50)
             .foregroundStyle(.white)
-            .shadow(color: .black.opacity(0.2), radius: 3,x : -3, y: -4)
-            .shadow(color: .black.opacity(0.2), radius: 3, x : 3, y : 4)
             .overlay{
                 HStack{
                     ForEach(TabViewItem.Tabitems, id: \.self){item in
@@ -24,13 +21,16 @@ struct TabViewDesign: View {
                             }label:{
                                 VStack{
                                     Image(SelectedItem != item ? item.Image : item.SelectedImage)
-                                        .frame(width: 34, height: 34)
+                                        .resizable()                     
+                                        .scaledToFit()
+                                        .frame(width: 24, height: 24)
                                         .background(
                                             RoundedRectangle(cornerRadius: 9)
                                                 .fill(SelectedItem != item ? .white : .main)
+                                                .frame(width: 30, height: 30)
                                         )
                                     Text(item.Title)
-                                        .font(.system(size: 8))
+                                        .font(.medium(8))
                                         .tint(.black)
                                 }
                         }

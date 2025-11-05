@@ -8,10 +8,25 @@
 import SwiftUI
 
 struct SignupView: View {
+    @State var step = 1
+    @StateObject var s = SignupViewModel()
+    @State var input : String = ""
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            switch step {
+            case 1:
+                GetAccountInfoView(sign: s, gonext: $step)
+            case 2:
+                GetPersonalInfoView(signupVM: s, gonext: $step)
+            case 3:
+                GetVerificate(sign: s)
+            default:
+                GetAccountInfoView(sign: s, gonext: $step)
+            }
+        }
     }
 }
+
 
 #Preview {
     SignupView()

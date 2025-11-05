@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-class SelectVeiwModel : ObservableObject{
+class SelectViewModel : ObservableObject{
     @Published var question : [SelectModel] = [
-        SelectModel(title: "희망하는 전공 분야는?", number: 1,selected: 1),
-        SelectModel(title: "하고싶은 것은?", number: 2,selected: 1)
+        SelectModel(title: "첫번째 문항", number: 1,selected: .common),
+        SelectModel(title: "두번째 문항", number: 2,selected: .common)
     ]
 }

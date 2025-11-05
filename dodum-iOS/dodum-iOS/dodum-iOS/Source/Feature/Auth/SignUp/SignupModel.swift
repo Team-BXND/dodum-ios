@@ -7,12 +7,19 @@
 
 import SwiftUI
 
-struct SignupModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+struct SignupModel {
+    var username : String = ""
+    var password : String = ""
+    var grade : Int = 1
+    var class_no : Int = 1
+    var student_no : Int = 1
+    var phone : String = ""
+    var email : String = ""
+    var major : String?
+    var history : String?
+    var club : club?
 }
 
-#Preview {
-    SignupModel()
+enum club : String, CaseIterable,Codable{
+    case BIND, _3D = "3D", 두카미, Louter, CNS, 모디, ALT, Chatty, None
 }

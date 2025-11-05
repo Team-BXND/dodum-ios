@@ -7,12 +7,40 @@
 
 import SwiftUI
 
-struct backbutton: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct AddBackButtonViewModifier: ViewModifier {
+    @Environment(\.dismiss) private var dismiss
+    
+    let text: String
+    let systemImageName: String
+    let fontcolor: Color
+    
+    func body(content: Content) -> some View {
+        content
+            .navigationBarBackButtonHidden()
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        dismiss()
+                    }) {
+                        HStack {
+                            Image(systemName: systemImageName)
+                                .foregroundStyle(fontcolor)
+                            Text(text)
+                                .foregroundStyle(fontcolor)
+                                .font(.bold(16))
+                        }
+                    }
+                }
+            }
     }
 }
 
-#Preview {
-    backbutton()
+extension View {
+    func addBackButton(
+        text: String,
+        systemImageName: String,
+        fontcolor: Color = .white
+    ) -> some View {
+        self.modifier(AddBackButtonViewModifier(text: text, systemImageName: systemImageName, fontcolor: fontcolor))
+    }
 }

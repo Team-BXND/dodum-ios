@@ -7,12 +7,7 @@
 
 import SwiftUI
 
-struct LoginModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-#Preview {
-    LoginModel()
+struct LoginModel {
+    var id : String
+    var pw : String
 }

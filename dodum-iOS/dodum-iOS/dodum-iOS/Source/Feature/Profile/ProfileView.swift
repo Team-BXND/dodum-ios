@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @Binding var islogin : Bool
     var body: some View {
-        Text("프로필")
+        NavigationStack{
+            Text("프로필")
+            Button("로그인"){
+                islogin.toggle()
+            }
+        }
     }
 }
 
-#Preview {
-    ProfileView()
-}

@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct LoginViewModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+class LoginViewModel : ObservableObject{
+    @Published var arr : LoginModel = LoginModel(id: "", pw: "")
+    
+    
+    func login(){
+        
     }
-}
-
-#Preview {
-    LoginViewModel()
+    
 }

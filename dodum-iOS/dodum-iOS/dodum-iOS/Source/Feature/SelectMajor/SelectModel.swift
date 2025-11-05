@@ -7,12 +7,11 @@
 
 import SwiftUI
 
-struct SelectModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+struct SelectModel: Identifiable{
+    let id = UUID()
+    let title : String
+    let number : Int
+    var selected : SelectType
+    var input : String = ""
 }
 
-#Preview {
-    SelectModel()
-}
