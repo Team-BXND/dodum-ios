@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# Xcode
+*.xcuserstate
+*.xcworkspace/xcuserdata/
+*.xcuserdata/
+DerivedData/
+build/
+
+# 개인 설정
+xcuserdata/
