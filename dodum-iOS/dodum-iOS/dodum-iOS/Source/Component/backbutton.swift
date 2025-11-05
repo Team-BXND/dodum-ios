@@ -1,5 +1,5 @@
 //
-//  SignupView.swift
+//  backbutton.swift
 //  dodum-iOS
 //
 //  Created by maple on 10/29/25.
@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct SignupView: View {
+struct backbutton: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
 #Preview {
-    SignupView()
+    backbutton()
 }
