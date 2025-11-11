@@ -11,7 +11,7 @@ struct TabViewDesign: View {
     @Binding var SelectedItem : TabViewItem
     var body: some View {
         Rectangle()
-            .frame(width: 393, height: 50)
+            .frame(maxWidth: .infinity, maxHeight: 50)
             .foregroundStyle(.white)
             .overlay{
                 HStack{
