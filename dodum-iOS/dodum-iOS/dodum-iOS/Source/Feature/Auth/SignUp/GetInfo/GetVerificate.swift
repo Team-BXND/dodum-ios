@@ -1,11 +1,12 @@
 import SwiftUI
 struct GetVerificate: View {
-    @StateObject var sign : SignupViewModel
+    @StateObject var SignupVM : SignupViewModel
     @State var isfailed = false
     @State var inputemail : String = ""
     @State var inputauthnum : String = ""
     @State var inputpwcheck : String = ""
     var body: some View {
+        Text("\(SignupVM.Info)")
         NavigationStack{
             VStack{
                 HStack{
@@ -17,7 +18,6 @@ struct GetVerificate: View {
                 }
                 .padding(.top,68)
                 .padding(.bottom,26)
-                
                 HStack{
                     Text("이메일")
                         .padding(.leading,32)
@@ -28,7 +28,7 @@ struct GetVerificate: View {
                         .stroke(.gray)
                         .frame(width:238 ,height:43 )
                         .overlay{
-                            TextField("",text: $inputemail,prompt: Text("이메일을 입력하세요").foregroundStyle(.gray))
+                            TextField("",text: $SignupVM.Info.email,prompt: Text("이메일을 입력하세요").foregroundStyle(.gray))
                                 .padding(.leading,12)
                         }
                     Rectangle()
@@ -37,9 +37,11 @@ struct GetVerificate: View {
                         .foregroundStyle(.main)
                         .overlay{
                             Button{
-                                
+                                Task{
+                                    await SignupVM.emailsend()
+                                }
                             }label: {
-                                Text("인증번호 확인")
+                                Text("인증번호 전송")
                                     .font(.system(size: 12))
                                     .foregroundStyle(.white)
                             }
@@ -51,9 +53,11 @@ struct GetVerificate: View {
                     Spacer()
                 }
                 AuthTextField(text: "인증번호를 입력하세요",input: $inputauthnum,yaho : isfailed)
-                
+                    .keyboardType(.numberPad)
                 Button{
-                    
+                    Task{
+                        await SignupVM.Signuppost()
+                    }
                 }label: {
                     ZStack{
                         Rectangle()
@@ -65,7 +69,12 @@ struct GetVerificate: View {
                             .foregroundStyle(.white)
                     }
                 }
-                .padding(.top,32)
+                .alert("알림",isPresented: $SignupVM.showalert){
+                    Button("알림",role: .cancel){}
+                }message: {
+                    Text(SignupVM.alertMessage)
+                }
+                
                 Spacer()
             }
             .ignoresSafeArea()

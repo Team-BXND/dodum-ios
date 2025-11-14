@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SignupModel {
+struct SignupModel : Codable{
     var username : String = ""
     var password : String = ""
     var grade : Int = 1
@@ -21,5 +21,5 @@ struct SignupModel {
 }
 
 enum club : String, CaseIterable,Codable{
-    case BIND, _3D = "3D", 두카미, Louter, CNS, 모디, ALT, Chatty, None
+    case BIND, 삼디, 두카미, Louter, CNS, 모디, ALT, Chatty, None
 }

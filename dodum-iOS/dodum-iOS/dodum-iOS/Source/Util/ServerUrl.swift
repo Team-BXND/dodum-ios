@@ -7,12 +7,4 @@
 
 import SwiftUI
 
-struct ServerUrl: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-#Preview {
-    ServerUrl()
-}
+public let baseurl = "https://heptagonal-king-subpleural.ngrok-free.dev/"

@@ -77,6 +77,7 @@ struct GetPersonalInfoView: View {
                         .frame(width:104 ,height:43 )
                         .overlay{
                             TextField("번호",text: $inputnum)
+                                .keyboardType(.numberPad)
                                 .padding(.leading,12)
                         }
                 }
@@ -86,6 +87,8 @@ struct GetPersonalInfoView: View {
                     Spacer()
                 }
                 AuthTextField(text: "전화번호를 입력하세요",input: $inputphone,yaho : isfailed)
+                    .keyboardType(.numberPad)
+                    
                 HStack{
                     Text("동아리")
                         .padding(.leading,32)
@@ -102,15 +105,17 @@ struct GetPersonalInfoView: View {
                             }
                         }
                         .pickerStyle(.menu)
+                        
+                        .frame(width: 90)
                         .tint(clubselect == .None ? .gray : .black)
                         }
                 Button{
                     if (inputclass != nil && inputgrade != nil && inputphone != ""){
-                        signupVM.Signup.class_no = inputclass!
-                        signupVM.Signup.grade = inputgrade!
-                        signupVM.Signup.student_no = number
-                        signupVM.Signup.phone = inputphone
-                        signupVM.Signup.club = clubselect
+                        signupVM.Info.class_no = inputclass!
+                        signupVM.Info.grade = inputgrade!
+                        signupVM.Info.student_no = number
+                        signupVM.Info.phone = inputphone
+                        signupVM.Info.club = clubselect
                         gonext += 1
                     }
                 }label: {
@@ -135,4 +140,9 @@ struct GetPersonalInfoView: View {
         }
         .navigationBarBackButtonHidden(true)
     }
+}
+
+#Preview {
+    @Previewable @State var yaho = 1
+    GetPersonalInfoView(signupVM: SignupViewModel(), gonext: $yaho)
 }

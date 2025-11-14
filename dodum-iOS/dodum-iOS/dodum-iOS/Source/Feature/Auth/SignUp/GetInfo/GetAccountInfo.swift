@@ -22,13 +22,13 @@ struct GetAccountInfoView: View {
                         .padding(.leading,32)
                     Spacer()
                 }
-                AuthTextField(text: "아이디를 입력하세요",input: $sign.Signup.username, yaho: isfailed)
+                AuthTextField(text: "아이디를 입력하세요",input: $sign.Info.username, yaho: isfailed)
                 HStack{
                     Text("비밀번호")
                         .padding(.leading,32)
                     Spacer()
                 }
-                SecretTextField(text: "비밀번호를 입력하세요",input: $sign.Signup.password,yaho : isfailed)
+                SecretTextField(text: "비밀번호를 입력하세요",input: $sign.Info.password,yaho : isfailed)
                 HStack{
                     Text("비밀번호 확인")
                         .padding(.leading,32)
@@ -51,12 +51,12 @@ struct GetAccountInfoView: View {
                     }
                 }
                 .padding(.top,32)
-                .disabled(sign.Signup.username.isEmpty ||
-                          sign.Signup.password.isEmpty ||
-                          sign.Signup.password != inputpwcheck)
-                .opacity(sign.Signup.username.isEmpty ||
-                         sign.Signup.password.isEmpty ||
-                         sign.Signup.password != inputpwcheck ? 0.5 : 1)
+                .disabled(sign.Info.username.isEmpty ||
+                          sign.Info.password.isEmpty ||
+                          sign.Info.password != inputpwcheck)
+                .opacity(sign.Info.username.isEmpty ||
+                         sign.Info.password.isEmpty ||
+                         sign.Info.password != inputpwcheck ? 0.5 : 1)
                 
                 Spacer()
             }

@@ -19,7 +19,7 @@ struct SignupView: View {
             case 2:
                 GetPersonalInfoView(signupVM: s, gonext: $step)
             case 3:
-                GetVerificate(sign: s)
+                GetVerificate(SignupVM: s)
             default:
                 GetAccountInfoView(sign: s, gonext: $step)
             }

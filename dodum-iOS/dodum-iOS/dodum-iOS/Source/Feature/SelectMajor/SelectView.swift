@@ -13,9 +13,13 @@ struct SelectView: View {
         VStack{
         Image(.mbti)
             ScrollView(showsIndicators: false) {
-                ForEach($SelectVM.question){$item in
+                ForEach($SelectVM.select_questions){$item in
                     Color.white
-                    SelectMCItem(selected: $item.selected, number: item.number, title: item.title)
+                    SelectItem(selected: $item.selected, number: item.num, title: item.title)
+                }
+                ForEach(1...2,id: \.self){item in
+                    Color.white
+                    SubjectiveItem(input: "", title: "임시 텍스트", number: 1)
                 }
                 Button{
                     
@@ -30,6 +34,9 @@ struct SelectView: View {
                 }
                 .padding(.top,66)
             }
+        }
+        .onAppear{
+            SelectVM.GenerateSelect()
         }
     }
 }

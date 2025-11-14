@@ -12,7 +12,7 @@ struct TabViewDesign: View {
     var body: some View {
         Rectangle()
             .frame(maxWidth: .infinity, maxHeight: 50)
-            .foregroundStyle(.white)
+            .foregroundStyle(Color.background)
             .overlay{
                 HStack{
                     ForEach(TabViewItem.Tabitems, id: \.self){item in
@@ -37,8 +37,8 @@ struct TabViewDesign: View {
                     }
                     .frame(maxWidth: .infinity)
                 }
-                
-            }
+                .padding(.horizontal,32)
+        }
     }
 }
 

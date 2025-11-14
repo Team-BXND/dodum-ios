@@ -9,8 +9,9 @@ import SwiftUI
 
 struct etcInfoView: View {
     var body: some View {
-        Text("기타 정보")
-            
+        VStack{
+            Text("기타 정보")
+        }
     }
 }
 
