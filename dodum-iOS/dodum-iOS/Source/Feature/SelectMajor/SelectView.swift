@@ -2,7 +2,7 @@
 //  SelectView.swift
 //  dodum-iOS
 //
-//  Created by maple on 9/27/25.
+//  Created by chanwoo on 11/13/25.
 //
 
 import SwiftUI
