@@ -35,6 +35,7 @@ struct GetPersonalInfoView: View {
                 
                 HStack{
                     Text("학번")
+                        .font(.regular(16))
                         .padding(.leading,32)
                     Spacer()
                 }
@@ -83,6 +84,7 @@ struct GetPersonalInfoView: View {
                 }
                 HStack{
                     Text("전화번호")
+                        .font(.regular(16))
                         .padding(.leading,32)
                     Spacer()
                 }
@@ -91,6 +93,7 @@ struct GetPersonalInfoView: View {
                     
                 HStack{
                     Text("동아리")
+                        .font(.regular(16))
                         .padding(.leading,32)
                     Spacer()
                 }
@@ -125,7 +128,7 @@ struct GetPersonalInfoView: View {
                             .cornerRadius(8)
                             .foregroundStyle(.main)
                         Text("다음")
-                            .font(.system(size: 20))
+                            .font(.black(20))
                             .foregroundStyle(.white)
                     }
                 }

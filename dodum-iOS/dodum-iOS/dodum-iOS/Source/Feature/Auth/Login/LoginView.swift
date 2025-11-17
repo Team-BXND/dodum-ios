@@ -71,7 +71,9 @@ struct LoginView: View {
                 .padding(.trailing,32)
                 .padding(.bottom,32)
                 Button{
-                    lgin.login()
+                    Task{
+                        await lgin.login()
+                    }
                 }label: {
                     ZStack{
                         Rectangle()

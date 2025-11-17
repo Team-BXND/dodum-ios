@@ -46,7 +46,7 @@ enum NetworkError: Error {
 struct APIResponse<DataType : Decodable> : Decodable{
     let status : Int
     let data : DataType?
-    let error : APIError
+    let error : APIError?
 }
 
 struct APIError : Decodable {

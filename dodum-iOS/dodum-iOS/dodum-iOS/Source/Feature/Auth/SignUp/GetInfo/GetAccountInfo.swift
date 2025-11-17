@@ -19,18 +19,21 @@ struct GetAccountInfoView: View {
                 .padding(.bottom,26)
                 HStack{
                     Text("아이디")
+                        .font(.regular(16))
                         .padding(.leading,32)
                     Spacer()
                 }
                 AuthTextField(text: "아이디를 입력하세요",input: $sign.Info.username, yaho: isfailed)
                 HStack{
                     Text("비밀번호")
+                        .font(.regular(16))
                         .padding(.leading,32)
                     Spacer()
                 }
                 SecretTextField(text: "비밀번호를 입력하세요",input: $sign.Info.password,yaho : isfailed)
                 HStack{
                     Text("비밀번호 확인")
+                        .font(.regular(16))
                         .padding(.leading,32)
                     Spacer()
                 }
@@ -46,7 +49,7 @@ struct GetAccountInfoView: View {
                             .cornerRadius(8)
                             .foregroundStyle(.main)
                         Text("다음")
-                            .font(.system(size: 20))
+                            .font(.black(20))
                             .foregroundStyle(.white)
                     }
                 }
@@ -65,4 +68,9 @@ struct GetAccountInfoView: View {
         .navigationBarBackButtonHidden(true)
     }
     
+}
+
+#Preview {
+    @Previewable @State var yaho = 1
+    GetAccountInfoView(sign: SignupViewModel(), gonext: $yaho)
 }

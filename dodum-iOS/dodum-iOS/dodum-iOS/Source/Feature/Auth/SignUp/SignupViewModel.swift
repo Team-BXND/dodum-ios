@@ -11,7 +11,10 @@ class SignupViewModel : ObservableObject{
                                                 student_no: 1, phone: "", email: "")
     @Published var alertMessage : String = ""
     @Published var showalert = false
+    @Published var ispost = false
     
+    
+    @MainActor
     func emailsend() async {
         do {
             let result = try await NetworkRunner.shared.request(
@@ -20,23 +23,25 @@ class SignupViewModel : ObservableObject{
                 parameter: ["email" : Info.email],
                 response: APIResponse<String>.self
             )
-            if let data = result.data{
-                print("성공",data)
-            }
+            alertMessage = result.data ?? "디코딩 안됨ㅇㅇ"
+            showalert = true
         } catch {
-            
+            alertMessage = error.localizedDescription
+            showalert = true
+            print(error)
         }
     }
     
-    func emailrcheck(email : String, authnumber : String) async{
+    @MainActor
+    func emailrcheck(authnumber : String) async{
         do {
             let result = try await NetworkRunner.shared.request(
                 "auth/email/check",
                 method: .post,
-                parameter: ["email":email,"authnum":authnumber],
+                parameter: ["email":Info.email,"authnum":authnumber],
                 response: APIResponse<Bool>.self
             )
-            
+            ispost = result.data!
             
         } catch {
             

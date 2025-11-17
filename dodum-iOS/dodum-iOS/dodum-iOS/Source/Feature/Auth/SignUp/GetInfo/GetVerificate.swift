@@ -5,8 +5,8 @@ struct GetVerificate: View {
     @State var inputemail : String = ""
     @State var inputauthnum : String = ""
     @State var inputpwcheck : String = ""
+    @State var ispost : Bool = false
     var body: some View {
-        Text("\(SignupVM.Info)")
         NavigationStack{
             VStack{
                 HStack{
@@ -20,6 +20,7 @@ struct GetVerificate: View {
                 .padding(.bottom,26)
                 HStack{
                     Text("이메일")
+                        .font(.regular(16))
                         .padding(.leading,32)
                     Spacer()
                 }
@@ -49,6 +50,7 @@ struct GetVerificate: View {
                 }
                 HStack{
                     Text("인증번호")
+                        .font(.regular(16))
                         .padding(.leading,32)
                     Spacer()
                 }
@@ -56,7 +58,14 @@ struct GetVerificate: View {
                     .keyboardType(.numberPad)
                 Button{
                     Task{
-                        await SignupVM.Signuppost()
+                        await SignupVM.emailrcheck(authnumber: inputauthnum)
+                    }
+                    if ispost{
+                        Task{
+                            await SignupVM.Signuppost()
+                        }
+                    }else {
+                        
                     }
                 }label: {
                     ZStack{
@@ -65,7 +74,7 @@ struct GetVerificate: View {
                             .cornerRadius(8)
                             .foregroundStyle(.main)
                         Text("회원가입")
-                            .font(.system(size: 20))
+                            .font(.black(20))
                             .foregroundStyle(.white)
                     }
                 }

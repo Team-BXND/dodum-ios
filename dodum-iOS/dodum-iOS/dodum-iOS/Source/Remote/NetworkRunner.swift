@@ -9,6 +9,7 @@ import SwiftUI
 import Alamofire
 
 struct VoidResponse : Decodable {} // JSON body가 빈상태로 올때 request를 호출할 때 넣을 타입
+struct EmptyParameters : Encodable {}
 
 class NetworkRunner: ObservableObject {
     
@@ -25,7 +26,7 @@ class NetworkRunner: ObservableObject {
         _ Path : String,
         method : HTTPMethod,
         headers : HTTPHeaders? = nil,
-        parameter : Parameters? = nil,
+        parameter : Parameters? = EmptyParameters(),
         response : Response.Type,
         isAuthorization : Bool = false
     ) async throws -> Response{

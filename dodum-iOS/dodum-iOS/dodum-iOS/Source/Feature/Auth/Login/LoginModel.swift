@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LoginModel {
+struct LoginModel : Encodable {
     var id : String
     var pw : String
 }
