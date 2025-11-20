@@ -35,7 +35,8 @@ class NetworkRunner: ObservableObject {
             method: method,
             parameters : parameter,
             encoder: JSONParameterEncoder.default,
-            headers: headers
+            headers: headers,
+//            interceptor : isAuthorization ? AuthInterceptor() : nil
         )
             .validate()
         let decodedResponse = try await result.serializingDecodable(response.self).value

@@ -7,7 +7,7 @@
 
 struct LoginResponse : Decodable {
     var status : Int
-    var data : Token
+    var data : Token?
     var error : loginerror?
 }
 

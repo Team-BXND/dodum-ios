@@ -14,7 +14,7 @@ struct TabViewDesign: View {
             .frame(maxWidth: .infinity, maxHeight: 50)
             .foregroundStyle(Color.background)
             .overlay{
-                HStack{
+                HStack(alignment: .top){
                     ForEach(TabViewItem.Tabitems, id: \.self){item in
                             Button{
                                 SelectedItem = item
@@ -35,7 +35,7 @@ struct TabViewDesign: View {
                                 }
                         }
                     }
-                    .frame(maxWidth: .infinity)
+                    .frame(maxWidth: .infinity,maxHeight: 70)
                 }
                 .padding(.horizontal,32)
         }

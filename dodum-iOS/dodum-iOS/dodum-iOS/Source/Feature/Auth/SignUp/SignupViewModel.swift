@@ -44,7 +44,8 @@ class SignupViewModel : ObservableObject{
             ispost = result.data!
             
         } catch {
-            
+            alertMessage = error.localizedDescription
+            showalert  = true
         }
     }
     

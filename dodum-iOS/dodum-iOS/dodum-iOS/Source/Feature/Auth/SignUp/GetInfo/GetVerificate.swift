@@ -9,6 +9,7 @@ struct GetVerificate: View {
     var body: some View {
         NavigationStack{
             VStack{
+                
                 HStack{
                     Text("회원가입 정보를 입력해주세요")
                         .font(.semibold(28))
@@ -48,6 +49,7 @@ struct GetVerificate: View {
                             }
                         }
                 }
+                
                 HStack{
                     Text("인증번호")
                         .font(.regular(16))

@@ -13,11 +13,16 @@ enum PretendardWeight: String {
     case regular = "Pretendard-Regular"
     case medium = "Pretendard-Medium"
     case light = "Pretendard-Light"
+    case black = "Pretendard-Black"
 }
 
 extension Font {
     private static func pretendard(weight: PretendardWeight, size: CGFloat) -> Self {
         Font.custom(weight.rawValue, size: size)
+    }
+    
+    static func black(_ size : CGFloat) -> Self {
+        Font.pretendard(weight: .black, size: size)
     }
     
     static func bold(_ size: CGFloat) -> Self {

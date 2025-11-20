@@ -18,6 +18,7 @@ struct MainView: View {
                         .padding(.leading,13)
                         
                     Spacer()
+                    Button("testlogin"){islogin = true}
                     Button {
                         ViewSelected = .profile
                     } label: {
@@ -41,7 +42,7 @@ struct MainView: View {
                     case .etcInfo:
                         etcInfoView()
                     case .profile:
-                        ProfileView(islogin: $islogin)
+                        ProfileView()
                     }
                     TabViewDesign(SelectedItem: $ViewSelected)
                 }
@@ -54,7 +55,6 @@ struct MainView: View {
     }
         
 }
-
 
 
 

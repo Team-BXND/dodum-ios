@@ -44,3 +44,14 @@
 //        self.modifier(AddBackButtonViewModifier(text: text, systemImageName: systemImageName, fontcolor: fontcolor))
 //    }
 //}
+
+import SwiftUI
+
+struct backbutton : View {
+    @Environment(\.dismiss) private var dismiss
+    var body : some  View{
+        Button("뒤로가기"){
+            dismiss()
+        }
+    }
+}
