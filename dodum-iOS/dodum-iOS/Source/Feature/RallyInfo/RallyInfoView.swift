@@ -41,7 +41,7 @@ struct RallyInfoView: View {
                 }
                 .shadow(radius: 5)
                 .padding(.trailing, 16)
-                .padding(.bottom, 16)
+                .padding(.bottom, 36)
                 
                 NavigationLink(destination: RallyInfoAdd(), isActive: $goToAdd) {
                     EmptyView()

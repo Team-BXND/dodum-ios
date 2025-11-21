@@ -34,7 +34,7 @@ struct ProfileView: View {
 
                 Spacer(minLength: 30)
 
-                HStack {
+                HStack(spacing: 25) {
                     ZStack {
                         Color.main
                             .frame(maxWidth: 124, maxHeight: 35)

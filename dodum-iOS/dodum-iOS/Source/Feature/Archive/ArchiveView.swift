@@ -11,7 +11,7 @@ struct ArchiveView: View {
     @State private var goToAdd = false
     @State private var selectedCategory: ArchiveCategory = .club
     
-    var club: ArchiveModel = ArchiveModel(title: "도담도담", subtitle: "바인드", content: "내용")
+    var club: ArchiveModel = ArchiveModel(title: "도담도담", subtitle: "바인드", content: "도담도담은 외출/외박 신청, 심야 자습 신청, 급식 확인, 기숙사 아침 기상송 확인, 학교와 기숙사 상벌점 조회, 퇴사 버스 신청, 학교 일정 조회 기능을 제공합니다.")
     var narsha: ArchiveModel = ArchiveModel(title: "나르샤 제목", subtitle: "제작자", content: "내용")
     var award: ArchiveModel = ArchiveModel(title: "팀명", subtitle: "수상종류", content: "내용")
     var project: ArchiveModel = ArchiveModel(title: "프로젝트명", subtitle: "제작연도", content: "내용")
@@ -73,7 +73,7 @@ struct ArchiveView: View {
                 }
                 .shadow(radius: 5)
                 .padding(.trailing, 16)
-                .padding(.bottom, 16)
+                .padding(.bottom, 36)
                 
                 NavigationLink(destination: ArchiveAdd(), isActive: $goToAdd) {
                     EmptyView()

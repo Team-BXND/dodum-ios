@@ -11,7 +11,7 @@ struct ProfileEdit: View {
     @State var student_no: String = ""
     @State private var SelectedClub: String = "동아리를 선택하세요."
     
-    let clubs = ["BIND", "3D", "두카미", "Louter", "CNS", "모디", "ALT", "Chatty"]
+    let clubs = ["BIND", "삼디", "두카미", "Louter", "CNS", "모디", "ALT", "Chatty"]
 
     var body: some View {
         NavigationStack {
@@ -138,7 +138,7 @@ struct ProfileEdit: View {
                 Spacer()
 
                 HStack {
-                    ZStack {
+                       ZStack {
                         Color.main
                             .frame(maxWidth: 128, maxHeight: 35)
                             .cornerRadius(8)
@@ -149,7 +149,7 @@ struct ProfileEdit: View {
                                 .foregroundColor(.white)
                         }
                     }
-                    .ignoresSafeArea(.keyboard)
+                       .padding(.leading, 30)
 
                     ZStack {
                         Color.main
@@ -161,7 +161,7 @@ struct ProfileEdit: View {
                                 .foregroundColor(.white)
                         }
                     }
-                    .ignoresSafeArea(.keyboard)
+                    .padding()
 
                     ZStack {
                         Color.buttonGray
@@ -174,9 +174,11 @@ struct ProfileEdit: View {
                                 .foregroundColor(.white)
                         }
                     }
-                    .ignoresSafeArea(.keyboard)
+                    .padding(.trailing, 30)
                 }
-                .padding(.top, -150)
+                .ignoresSafeArea(.keyboard)
+                .padding(.bottom, 70)
+                Spacer()
                 
                 NavigationLink(destination: ChangePswd(), isActive: $goToChange) {
                     EmptyView()

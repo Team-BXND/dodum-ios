@@ -1,10 +1,3 @@
-//
-//  CreatePostView.swift
-//  dodum-iOS
-//
-//  Created by 잇쬬 on 10/27/25.
-//
-
 import SwiftUI
 
 struct RallyInfoAdd: View {

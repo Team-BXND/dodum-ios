@@ -39,7 +39,6 @@ struct MainView: View {
                 VStack {
                     Spacer()
                     TabViewDesign(SelectedItem: $ViewSelected)
-                        .padding(.bottom, 10)
                 }
                 .ignoresSafeArea(edges: .bottom)
             }
